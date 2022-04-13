@@ -119,3 +119,10 @@ function objectInArray(){
     });
     return objectArray;
 }
+
+const deleteButton = document.querySelector('#deleteBank');
+deleteButton.addEventListener('click',function(){
+    localStorage.clear();
+    document.querySelector('.display').textContent = 'Data is wiped!';
+
+});
