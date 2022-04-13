@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="addQuestionForm animate__animated">
+            <div class="promptQuestionForm">
+                <div class="input-group">
+                    <label for="addPrompt">Question</label>
+                    <br>
+                    <textarea name="prompt" id="addPrompt" cols="30" rows="3"></textarea>
+                </div>
+                <div class="answerForm">
+                    <div class="input-group">
+                        <label for="addAnswerA">A.</label>
+                        <input type="text" name="answerA" id="addAnswerA" placeholder="Answer A" />
+                    </div>
+                    <div class="input-group">
+                        <label for="addAnswerB">B.</label>
+                        <input type="text" name="answerB" id="addAnswerB" placeholder="Answer B" />
+                    </div>
+                    <div class="input-group">
+                        <label for="addAnswerC">C.</label>
+                        <input type="text" name="answerC" id="addAnswerC" placeholder="Answer C" />
+                    </div>
+                    <div class="input-group">
+                        <label for="addAnswerD">D.</label>
+                        <input type="text" name="answerD" id="addAnswerD" placeholder="Answer D" />
+                    </div>
+                    <div class="input-group">
+                        <label for="correctAnswer">Correct answer: </label>
+                        <select id="correctAnswer">
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                            <option value="d">D</option>
+                        </select>
+                    </div>
+                    <button id="addQuestion" class="button">Add question</button>
+                </div>
+            </div>
+
+            <div class="textOutput">
+                <h2>This is output</h2>
+                <div>
+                    <div class="input-group">
+                        <label for="dataStructure">Pick data strucure you want to display</label>
+                        <br>
+                        <select name="dataStructure" id="dataStructure">
+                            <option value="array">1 Array</option>
+                            <option value="arrayInArray">Array in Array</option>
+                            <option value="objectStyle">Object</option>
+                        </select>
+                    </div>
+                    <button id="displayQuestion">Display Questions String</button>
+                </div>
+            </div>
+            <textarea class="display" rows="20" cols="90">
+
+            </textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
