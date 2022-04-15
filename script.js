@@ -122,7 +122,39 @@ function objectInArray(){
 
 const deleteButton = document.querySelector('#deleteBank');
 deleteButton.addEventListener('click',function(){
+   
     localStorage.clear();
     document.querySelector('.display').textContent = 'Data is wiped!';
+
+});
+
+const saveToTextBtn = document.querySelector("#saveToText");
+saveToTextBtn.addEventListener('click', function(){
+    let theData = JSON.parse(localStorage.getItem("quizBank")) || [];
+    
+    let template = `[`;
+    for (let aquestion of theData){
+        template += `
+                {
+                    question: '${aquestion.question}',
+                    answers: {
+                        a: '${aquestion.answers.a}',
+                        b: '${aquestion.answers.b}',
+                        c: '${aquestion.answers.c}',
+                        d: '${aquestion.answers.d}'
+                    },
+                    correct: ${aquestion.correctAnswer}
+                },
+        `;
+    }
+    
+    template +=`
+]
+    `;
+    
+
+    let blob = new Blob([template],
+    { type: "text/plain;charset=utf-8" });
+    saveAs(blob, "dataBlob" );
 
 });
